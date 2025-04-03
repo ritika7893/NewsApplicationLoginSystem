@@ -1,0 +1,76 @@
+{% extends "meetups/base/base.html" %}
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% block title %}Meetup Application{% endblock  %}</title>
+    
+    <meta name="description" content="Logistex - Transport & Logistics HTML Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+   
+
+</head>
+
+<body class="theme-red">
+
+
+    <!-- Scroll-top -->
+    <button class="scroll__top scroll__top-two scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+
+    <!-- header-area -->
+    
+    <!-- header-area-end -->
+
+    <!-- main-area -->
+    <main class="fix">
+        {% block content  %}
+        <!-- breadcrumb-area -->
+       
+        <!-- breadcrumb-area-end -->
+
+        <!-- blog-area -->
+        <section style="margin-top:50px;">
+            <div class="container">
+               
+                    
+                <div class="row">
+                     <div class="col-lg-12">
+                    <h1 class="title" style="margin-bottom:50px;">About The Application</h1>
+                    <p>My Django project is a simple Meetup Registration System that allows users to view available meetups and register for them. The homepage displays a list of all meetups using the index view, which retrieves all meetups from the database and passes them to the template for display.
+                    <p>When a user clicks on a specific meetup, they are taken to the meetup_details page. This view tries to find the meetup based on the provided slug. If found, it displays the meetup details along with a registration form. If the user submits the form, the app checks if the provided email already exists in the database. If not, a new participant is created and added to the meetup. After successful registration, the user is redirected to a confirmation page.</p>  
+                    <p>The confirm_registration view simply displays a confirmation message indicating that the registration was successful. If the meetup does not exist, an error message is shown instead.</p>   
+                    <p>Overall, this project provides a basic functionality where users can browse meetups, view details, register using a form, and receive confirmation upon successful registration.</p>
+                </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        {% endblock   %}
+        
+    </main>
+    <!-- main-area-end -->
+
+    <!-- footer-area -->
+    
+    <!-- footer-area-end -->
+
+
+
+    <!-- JS here -->
+   
+
+            

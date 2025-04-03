@@ -1,0 +1,118 @@
+{% extends "meetups/base/base.html" %}
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% block title %}Meetup Application{% endblock  %}</title>
+    
+    <meta name="description" content="Logistex - Transport & Logistics HTML Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+  
+</head>
+
+<body class="theme-red">
+
+
+    <!-- Scroll-top -->
+    <button class="scroll__top scroll__top-two scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+
+    <!-- header-area -->
+    
+    <!-- header-area-end -->
+
+    <!-- main-area -->
+    <main class="fix">
+        {% block content  %}
+        <!-- breadcrumb-area -->
+       
+        <!-- breadcrumb-area-end -->
+         {% if meetup_found %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog__details-wrapper">
+                        <div class="blog__details-thumb">
+                            <img src="{{meetup.image.url}}" alt="img">
+                        </div>
+                        <div class="blog__details-content">
+                            <div class="blog__meta blog__meta-two">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>{{meetup.date}}</li>
+                                    <li><i class="far fa-user"></i> by <a href="#">{{meetup.organizer_name}}</a></li>
+                                    <li><i class="flaticon-time"></i> 5 Min Read</li>
+                                    <li><i class="far fa-comment-alt"></i>{{ meetup.location}}</li>
+                                </ul>
+                            </div>
+                            <h3 class="title">{{meetup_title}}</h3>
+                            <p>{{meetup_description}}</div>
+                          
+                         
+                        </div>
+                       
+                    </div>
+                </div>
+          
+            
+
+           
+            
+            <div class="row justify-content-center" style="margin-top:60px; margin-bottom:100px; background-color:rgba(202, 201, 201, 0.8)">
+                <div class="col-lg-6">
+                    <h2 class="title" style="margin:30px;">Registration Form</h2>
+            
+                    <form method="POST" action="{% url 'meetup-detail' meetup.slug %}" class="request__form-three">
+                        {% csrf_token %}
+                        <div class="form-grp">
+                          
+                            {{ forms.name }}
+                            {{ forms.name.placeholder }}
+                        </div>
+                        <div class="form-grp">
+                           
+                            {{ forms.email }}
+                            {{ forms.email.placeholder }}
+                        </div>
+                        <div class="form-grp">
+                           
+                            {{ forms.phone }}
+                            {{ forms.phone.placeholder }}
+                        </div>
+                        <div class="form-grp">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            
+        </div>
+        {% else %}No Meetup Found
+        {% endif %}
+        {%endblock%}
+        <!-- blog-area -->
+       </main>
+    <!-- main-area-end -->
+
+    <!-- footer-area -->
+    
+    <!-- footer-area-end -->
+
+
+
+    <!-- JS here -->
+   
+</body>
+
+</html>
