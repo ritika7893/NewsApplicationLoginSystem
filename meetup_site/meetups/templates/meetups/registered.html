@@ -1,0 +1,84 @@
+{% extends "meetups/base/base.html" %}
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% block title %}Meetup Application{% endblock  %}</title>
+    
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+  
+
+</head>
+
+<body class="theme-red">
+
+
+    <!-- Scroll-top -->
+    <button class="scroll__top scroll__top-two scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+
+    <!-- header-area -->
+    
+    <!-- header-area-end -->
+
+    <!-- main-area -->
+    <main class="fix">
+        {% block heading-1 %}Thanks for Sign Up!!!{% endblock  %}
+        {% block content  %}
+        <!-- breadcrumb-area -->
+       
+        <!-- breadcrumb-area-end -->
+      
+        <!-- blog-area -->
+        <section style="margin-top:50px;"> 
+            <div class="container">
+               
+                    
+                
+            <div class="row justify-content-center" style="margin-top:30px;">
+                <div class="col-lg-6" style="background-color:rgba(214, 203, 202, 0.8); margin:50px; padding-top:30px;" >
+                   <h1  class="title" style="font-weight:bold margin:60px;">You Registered Successfully</h1>
+                   <h2  class="sub-title"style="font-weight:bold">Thanks for signing up-see you at the Meeting</h2>
+                   <p style="color:black">Got Question  or can't make it?Please Contact the <a href="mailto:{{meetup.organizer_name}}">organizer</a> ahead of time!</p>
+                   <a href="{% url 'all-meetups' %}" class="btn btn-two justify-content-center">
+                    Explore More Meetup <img src="assets/img/icon/right_arrow.svg" alt="" class="injectable">
+                </a>
+                </div>
+            </div>
+            
+                </div>  <!-- Ensure the last row is properly closed -->
+                
+                           
+                           
+                          
+                
+
+            {% endblock   %}
+        <!-- blog-area-end -->
+
+    </main>
+    <!-- main-area-end -->
+
+    <!-- footer-area -->
+    
+    <!-- footer-area-end -->
+
+
+
+    <!-- JS here -->
+   
+</body>
+
+</html>
+            
